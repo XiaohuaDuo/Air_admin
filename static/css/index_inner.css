@@ -25,6 +25,8 @@ html{*overflow:auto;min-width: 1020px; }
 .sidebar .nav>li.agency .nav-header a{ background:url(../images/ico05.png) no-repeat left center;}
 .sidebar .nav>li.email .nav-header a{ background:url(../images/ico06.png) no-repeat left center;}
 .sidebar .nav>li.system .nav-header a{ background:url(../images/ico07.png) no-repeat left center;}
+.sidebar .nav>li.nav-cost .nav-header a{ background:url(../images/583321.png) no-repeat left center;}
+
 
 /*子导航*/
 .sidebar .nav>li .subnav{ display:none; padding:6px 0 11px 0;}

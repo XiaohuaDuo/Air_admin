@@ -5,7 +5,7 @@ body{ font-family:'微软雅黑';background:#2a83cf;}
 #hd{  height:74px;background:url(../images/topbg.png) repeat-x;}
 #hd .hd-wrap{ position:relative;height:74px; background:url(../images/topline.png) no-repeat left bottom;}
 #hd .hd-wrap .top-light{ position:absolute; width:346px; height:74px; background:url(../images/toplight.png); top:0; left:0;}
-h1{ float:left; margin:14px 0 0 24px; width:184px; height:54px; background:url(../images/logo.png) no-repeat left center;position:relative;top:1;}
+h1{ float:left; margin:22px 0 0 24px; width:184px; height:54px; position:relative;top:1;}
 .main-nav{
 	position: relative;
 	z-index:2;
@@ -79,8 +79,8 @@ h1{ float:left; margin:14px 0 0 24px; width:184px; height:54px; background:url(.
 	float: right;
 	margin: 0 11px 0 0;
 }
-.login-info{margin:14px 14px 0 60px;height:18px;}
-.login-info .welcome{ float:left; padding-left:20px; width:90px; height:18px; line-height:18px; background:url(../images/topuser.png) no-repeat left bottom; font-size:12px; color:#fff;}
+.login-info{margin:14px 0 0 60px;height:18px;}
+.login-info .welcome{ float:left; padding-left:20px;  height:18px; line-height:18px; background:url(../images/topuser.png) no-repeat left bottom; font-size:12px; color:#fff;}
 .login-info .welcome span{ float:left;}
 .login-info .welcome .user-name{ float:left; color:#fff;}
 .login-info .login-msg{ float:left; margin-left:10px;}
@@ -92,7 +92,7 @@ h1{ float:left; margin:14px 0 0 24px; width:184px; height:54px; background:url(.
 	margin: 11px 0 0 0;
 }
 .tool a{
-	float: left;
+	float: right;
 	line-height: 24px;
 	color: #fff;
 	background: #3b9fe1;

@@ -1,6 +1,6 @@
 
 .row{
-	padding-right: 220px;
+	/*padding-right: 220px;*/
 }
 
 .row .main-wrap{
@@ -10,7 +10,7 @@
 
 .row .main-wrap .subfiled-wrap{
 	float: left;
-	width: 50%;
+	width: 100%;
 }
 
 .row .main-wrap .subfiled-wrap .subfiled{
