@@ -18,6 +18,7 @@ blockquote:before, blockquote:after, q:before, q:after {content:"";}
 blockquote, q {quotes:"" "";}
 a img {border:none;}
 em,cite{font-style:normal;}
+button{outline: none;}
 #container{ position:relative; background:url(../images/login_light.png) no-repeat center center;}
 
 #bd{}

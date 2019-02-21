@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="static/css/login.css" />
+    <link rel="stylesheet" href="common/css/common.css" />
 	<title>快递后台管理系统</title>
 </head>
 <body>
@@ -19,14 +20,14 @@
                     </p>
                     <p class="password ue-clear">
                     	<label>密&nbsp;&nbsp;&nbsp;码</label>
-                        <input type="text" id="password"/>
+                        <input type="password" id="password"/>
                     </p>
                     <p class="psw-forget">
                         <a href="forgetPassword.html">忘记密码</a>
                     </p>
                 </div>
                 <div class="login-btn ue-clear">
-                	<button type="button" class="btn blueBtn" onclick="submit()">登录</button>
+                	<button class="btn blueBtn" onclick="login()">登录</button>
                     <div class="remember ue-clear">
                     	<input type="checkbox" id="remember" />
                         <em></em>
@@ -74,18 +75,24 @@ function checkRemember($this){
 			$this.parent().removeClass('checked');
 		}
 	}
-}
+};
 
-function submit() {
+function login() {
     var username = document.getElementById('username').value
-    var password= hex_md5(document.getElementById('password').value);
-    Ajax('post',ipAddress+'/user/login',{'userName':username,'password':password},success,failed)
+    var password = hex_md5(document.getElementById('password').value)
+    if (username =='' || password == '') {
+        alert('用户名或密码不能为空')
+        return
+    }
+    var data = {'userName':username,'password':password}
+    Ajax('post',ipAddress+'/user/login',data,succuess,failed)
 }
-function success() {
+function succuess() {
     window.location.href = '/Air_admin/index.html'
 }
+
 function failed() {
-    alert('用户名或密码不正确，请重新输入')
+    alert('用户名或者密码错误，请重新输入！')
 }
 </script>
 </html>

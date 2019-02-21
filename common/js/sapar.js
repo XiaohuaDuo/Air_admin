@@ -2319,10 +2319,11 @@ function resize(resizeHandle){
 }
 
 
-var ipAddress = '192.168.0.106:8080/express-manage'
+var ipAddress = 'http://192.168.0.106/express-manage'
 
 //ajax请求
 function Ajax(type, url, data, success, failed){
+	console.log(url,'---url')
     // 创建ajax对象
     var xhr = null;
     if(window.XMLHttpRequest){
@@ -2347,7 +2348,7 @@ function Ajax(type, url, data, success, failed){
         if(data){
             xhr.open('GET', url + '?' + data, true);
         } else {
-            xhr.open('GET', url + '?t=' + random, true);
+            xhr.open('GET', url, true);
         }
         xhr.send();
 
@@ -2366,9 +2367,28 @@ function Ajax(type, url, data, success, failed){
             } else {
                 if(failed){
                     failed(xhr.status);
-                }
+                } else {
+                    allFailed()
+				}
             }
         }
     }
+};
+
+//检验手机号
+function checkPhone(tel) {
+    console.log(tel)
+	if (tel == '') {
+		return '手机号不能为空'
+	}
+    if(!(/^1[345678]\d{9}$/.test(tel))){
+    	return '手机号格式不正确'
+    } else {
+    	return ''
+	}
+};
+
+function allFailed() {
+	alert('服务器开小差了！')
 }
 

@@ -1,3 +1,5 @@
+@import "../../common/less/common.less";
+
 html{*overflow:auto;min-width: 1020px; }
 /*页面主体*/
 #bd .wrap{ padding-left:187px;}
@@ -26,6 +28,8 @@ html{*overflow:auto;min-width: 1020px; }
 .sidebar .nav>li.email .nav-header a{ background:url(../images/ico06.png) no-repeat left center;}
 .sidebar .nav>li.system .nav-header a{ background:url(../images/ico07.png) no-repeat left center;}
 .sidebar .nav>li.nav-cost .nav-header a{ background:url(../images/583321.png) no-repeat left center;}
+.sidebar .nav>li.nav-transfer .nav-header a{ background:url(../images/583468.png) no-repeat left center;}
+
 
 
 /*子导航*/
