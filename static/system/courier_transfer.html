@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../common/css/sapar.css" />
+    <link rel="stylesheet" type="text/css" href="../../common/css/common.css" />
+    <title>系统首页</title>
+</head>
+
+<body>
+<div id="saper-container">
+    <div id="saper-hd"></div>
+    <div id="saper-bd">
+        <div class="subfiled clearfix">
+            <h2>寄件服务</h2>
+        </div>
+        <div class="subfiled-style2 clearfix">
+            <h2>寄件人信息</h2>
+        </div>
+        <div class="subfiled-content">
+            <form class="saper-form" id="sendForm">
+                <div class="kv-item clearfix">
+                    <label><span class="impInfo">*</span>寄件人：</label>
+                    <div class="kv-item-content">
+                        <input type="text" placeholder="寄件人姓名">
+                    </div>
+                </div>
+                <div class="kv-item clearfix">
+                    <label><span class="impInfo">*</span>电话：</label>
+                    <div class="kv-item-content">
+                        <input id="sendPhone" type="text" placeholder="寄件人电话号码" onblur="isPhone('send')">
+                    </div>
+                    <p class="err-text">请输入正确电话号码</p>
+                </div>
+                <div class="kv-item clearfix">
+                    <label><span class="impInfo">*</span>所在地区：</label>
+                    <div class="kv-item-content">
+                        <input type="text" placeholder="省/市/区">
+                    </div>
+                </div>
+                <div class="kv-item clearfix">
+                    <label><span class="impInfo">*</span>详细地址：</label>
+                    <div class="kv-item-content">
+                        <textarea placeholder="街道门牌信息"></textarea>
+                    </div>
+                </div>
+
+
+                <!--<div class="buttons">-->
+                <!--<a href="javascript:;" class="sapar-btn sapar-btn-recom">确定</a>-->
+                <!--</div>-->
+            </form>
+        </div>
+        <div class="subfiled-style2 clearfix">
+            <h2>收件人信息</h2>
+        </div>
+        <div class="subfiled-content">
+            <form class="saper-form" id="receptForm">
+                <div class="kv-item clearfix">
+                    <label><span class="impInfo">*</span>收件人：</label>
+                    <div class="kv-item-content">
+                        <input type="text" placeholder="收件人姓名">
+                    </div>
+                </div>
+                <div class="kv-item clearfix">
+                    <label><span class="impInfo">*</span>电话：</label>
+                    <div class="kv-item-content">
+                        <input id="receptPhone" type="text" placeholder="收件人电话号码" onblur="isPhone('recept')">
+                    </div>
+                    <p class="err-text">请输入正确电话号码</p>
+                </div>
+                <div class="kv-item clearfix">
+                    <label><span class="impInfo">*</span>所在地区：</label>
+                    <div class="kv-item-content">
+                        <input type="text" placeholder="省/市/区">
+                    </div>
+                </div>
+                <div class="kv-item clearfix">
+                    <label><span class="impInfo">*</span>详细地址：</label>
+                    <div class="kv-item-content">
+                        <textarea placeholder="街道门牌信息"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="subfiled-style2 clearfix">
+            <h2>商品信息</h2>
+        </div>
+        <div class="subfiled-content">
+            <form class="saper-form" id="infoForm">
+                <div class="kv-item clearfix">
+                    <label><span class="impInfo"></span>物品类型：</label>
+                    <div class="kv-item-content">
+                        <select id="goodKind" name="goodKind" size="1" class="sel">
+                            <option value="1">文件</option>
+                            <option value="2">数码产品</option>
+                            <option value="3">生活用品</option>
+                            <option value="4">服饰</option>
+                            <option value="5">食品</option>
+                            <option value="6">其他</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="kv-item clearfix">
+                    <label><span class="impInfo"></span>预估重量：</label>
+                    <div class="kv-item-content">
+                        <input type="text" placeholder="收件人电话号码">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <p>
+            <button type="button" class="noClick canClick blueBtn">确认</button>
+        </p>
+    </div>
+</div>
+<div id="saper-ft"></div>
+</div>
+
+</body>
+<script type="text/javascript" src="../../common/js/jquery.js"></script>
+<script type="text/javascript" src="../../common/js/sapar.js"></script>
+<script type="text/javascript" src="../../common/js/WdatePicker.js"></script>
+<script type="text/javascript" src="js/courier_transfer.js"></script>
+</html>

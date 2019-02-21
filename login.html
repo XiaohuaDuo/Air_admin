@@ -15,18 +15,18 @@
                 <div class="login-input">
                 	<p class="user ue-clear">
                     	<label>用户名</label>
-                        <input type="text" />
+                        <input type="text" id="username"/>
                     </p>
                     <p class="password ue-clear">
                     	<label>密&nbsp;&nbsp;&nbsp;码</label>
-                        <input type="text" />
+                        <input type="text" id="password"/>
                     </p>
                     <p class="psw-forget">
                         <a href="forgetPassword.html">忘记密码</a>
                     </p>
                 </div>
                 <div class="login-btn ue-clear">
-                	<a href="index.html" class="btn">登录</a>
+                	<button class="btn blueBtn" onclick="login()">登录</button>
                     <div class="remember ue-clear">
                     	<input type="checkbox" id="remember" />
                         <em></em>
@@ -43,6 +43,7 @@
     <!--<div id="ft">CopyRight&nbsp;2016&nbsp;&nbsp;版权所有&nbsp;&nbsp;皖ICP备12345678号  更多模板：<a href="http://www.mycodes.net/" target="_blank">源码之家</a></div>-->
 </body>
 <script type="text/javascript" src="common/js/jquery.js"></script>
+<script type="text/javascript" src="common/js/md5/md5.js"></script>
 <script type="text/javascript">
 var height = $(window).height();
 $("#container").height(height);
@@ -72,6 +73,21 @@ function checkRemember($this){
 			$this.parent().removeClass('checked');
 		}
 	}
+}
+
+function login() {
+    var username = document.getElementById('username').value
+    var password = hex_md5(document.getElementById('password').value)
+    var data = {'userName':username,'password':password}
+    // Ajax('post',ipAddress+'/user/login',data,succuess,failed)
+    succuess()
+}
+function succuess() {
+    window.location.href = '/Air_admin/index.html'
+}
+
+function failed() {
+    alert('用户名或者密码错误，请重新输入！')
 }
 </script>
 </html>
