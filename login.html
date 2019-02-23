@@ -56,7 +56,7 @@ $(window).resize(function(){
 	var height = $(window).height();
 	$("#bd").css("padding-top",$(window).height()/2 - $("#bd").height()/2);
 	$("#container").height(height);
-	
+
 });
 
 $('#remember').focus(function(){
@@ -87,7 +87,8 @@ function login() {
     var data = {'userName':username,'password':password}
     Ajax('post',ipAddress+'/user/login',data,succuess,failed)
 }
-function succuess() {
+function succuess(res) {
+    localStorage.setItem('username',document.getElementById('username').value)
     window.location.href = '/Air_admin/index.html'
 }
 

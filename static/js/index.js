@@ -16,7 +16,7 @@ $('.exitDialog').Dialog({
 	autoOpen: false,
 	width:400,
 	height:200
-	
+
 });
 
 $('.exit').click(function(){
@@ -27,8 +27,13 @@ $('.exit').click(function(){
 
 $('.exitDialog input[type=button]').click(function(e) {
     $('.exitDialog').Dialog('close');
-	
+
 	if($(this).hasClass('ok')){
-		window.location.href = "login.html"	;
+		localStorage.removeItem('username')
+		Ajax('get',ipAddress+'/user/logout',null,success,null);
 	}
 });
+
+function success() {
+    window.location.href = "login.html"	;
+}

@@ -37,7 +37,7 @@
             <!--</div>-->
             <div class="toolbar">
                 <div class="login-info clearfix">
-                    <div class="welcome clearfix"><span>欢迎您,</span><span class="user-name">Admin</span></div>
+                    <div class="welcome clearfix"><span>欢迎您,</span><span class="user-name"></span></div>
                     <!--<div class="login-msg clearfix">-->
                         <!--<a href="javascript:;" class="msg-txt">消息</a>-->
                         <!--<a href="javascript:;" class="msg-num">10</a>-->
@@ -49,11 +49,11 @@
                     <!--<a href="javascript:;" class="help-btn">帮助</a>-->
                     <a href="javascript:;" class="quit-btn exit">退出</a>
                 </div>
-            </div>          
+            </div>
         </div>
     </div>
     <div id="bd">
-    	<div class="wrap clearfix"><!-- 
+    	<div class="wrap clearfix"><!--
         	<div class="sidebar">
             	<h2 class="sidebar-header"><p>功能导航</p></h2>
                 <ul class="nav">
@@ -116,18 +116,21 @@
         <div class="ui-dialog-text">
         	<p class="dialog-content">你确定要退出系统？</p>
             <p class="tips">如果是请点击“确定”，否则点“取消”</p>
-            
+
             <div class="buttons">
                 <input type="button" class="button long2 ok" value="确定" />
                 <input type="button" class="button long2 normal" value="取消" />
             </div>
         </div>
-        
+
     </div>
 </div>
 </body>
 <script type="text/javascript" src="common/js/jquery.js"></script>
 <script type="text/javascript" src="common/js/sapar.js"></script>
 <script type="text/javascript" src="static/js/index.js"></script>
-
+<script>
+    var name = localStorage.getItem('username');
+    document.getElementsByClassName('user-name')[0].innerHTML = name;
+</script>
 </html>

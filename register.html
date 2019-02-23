@@ -38,18 +38,12 @@
                 </p>
                 <p class="user ue-clear">
                     <label>密保问题</label>
-                    <select id="password" name="goodKind" size="1" class="sel" style="height: 39px;line-height: 39px;width: 245px;margin-left: 15px;outline: none;">
-                        <option value="1">文件</option>
-                        <option value="2">数码产品</option>
-                        <option value="3">生活用品</option>
-                        <option value="4">服饰</option>
-                        <option value="5">食品</option>
-                        <option value="6">其他</option>
+                    <select id="re-qustion" name="goodKind" size="1" class="sel" style="height: 39px;line-height: 39px;width: 245px;margin-left: 15px;outline: none;">
                     </select>
                 </p>
                 <p class="password ue-clear">
                     <label>密保答案</label>
-                    <input type="text" id="answer"/>
+                    <input type="text" id="register-answer"/>
                 </p>
             </div>
             <div class="login-btn ue-clear" style="padding-left: 300px;">
@@ -62,6 +56,7 @@
 </body>
 <script type="text/javascript" src="common/js/jquery.js"></script>
 <script type="text/javascript" src="common/js/sapar.js"></script>
+<script type="text/javascript" src="common/js/md5/md5.js"></script>
 <script type="text/javascript">
     var height = $(window).height();
     $("#container").height(height);
@@ -81,15 +76,17 @@
         var password = hex_md5(document.getElementById('register-password').value)
         var passwordSure = hex_md5(document.getElementById('register-password-sure').value)
         var ssh = document.getElementById('register-ssh').value
-        if (username == '' || password == '' || passwordSure == '' || ssh == '') {
-            alert('用户名、密码或密钥不能为空')
+        var answer = document.getElementById('register-answer').value
+        var questionSelect = document.getElementById('qustion').value
+        if (username == '' || password == '' || passwordSure == '' || ssh == '' || answer == '') {
+            alert('用户名、密码、密钥或密保答案不能为空')
             return
         }
         if (password != passwordSure)  {
             alert('两次密码不一致，请重新输入!')
             return
         }
-        var data = {'userName':username,'password':password,'key':ssh}
+        var data = {'userName':username,'password':password,'key':ssh,'questionId':questionSelect,'answer':answer}
         Ajax('post',ipAddress+'/user/register',data,succuess,null)
     };
     //注册成功回掉
@@ -98,10 +95,7 @@
     };
 
     //获取密保问题
-    Ajax('get',ipAddress+'/user/getPasswordQuestionInfos',null,getQustions,null)
+    getSelectAjax('re-qustion')
 
-    function getQustions(res) {
-        console.log(res,'---res')
-    }
 </script>
 </html>
