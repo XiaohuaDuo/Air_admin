@@ -2366,7 +2366,7 @@ function Ajax(type, url, data, success, failed){
             if(xhr.status == 200){
             	var res = JSON.parse(xhr.responseText)
 				if (res.code == '200') {
-					success(xhr.responseText)
+					success(res)
 				} else {
 					alert(res.info)
 				}

@@ -112,7 +112,7 @@
             </form>
         </div>
         <p>
-            <button type="button" class="noClick canClick blueBtn">确认</button>
+            <button type="button" class="noClick canClick blueBtn" onclick="takeOrder()">确认</button>
         </p>
     </div>
 </div>
@@ -124,4 +124,30 @@
 <script type="text/javascript" src="../../common/js/sapar.js"></script>
 <script type="text/javascript" src="../../common/js/WdatePicker.js"></script>
 <script type="text/javascript" src="js/courier_transfer.js"></script>
+<script>
+function takeOrder() {
+    var data = {
+        'sendName':'周筱筱',
+        'sendPhone':'13466489427',
+        'sendIdNo':'232325199606060606',
+        'sendProvince':'北京',
+        'sendCity':'北京',
+        'sendDistrict':'昌平区',
+        'sendDetailedAddr':'龙腾苑5区4号楼',
+        'receiveName':'杨',
+        'receivePhone':'13466489428',
+        'receiveProvince':'黑龙江',
+        'receiveCity':'绥化市',
+        'receiveDistrict':'肇东市',
+        'receiveDetailedAddr':'正阳三道街龙宇世纪新城',
+        'goodsType':0,
+        'estimateWeight':1.0
+    }
+    Ajax('post',ipAddress+'/express/saveExpressSendInfo',data,success,null)
+}
+
+function success(res) {
+    alert(res.data)
+}
+</script>
 </html>
