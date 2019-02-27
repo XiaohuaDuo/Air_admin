@@ -2383,7 +2383,6 @@ function Ajax(type, url, data, success, failed){
 
 //检验手机号
 function checkPhone(tel) {
-    console.log(tel)
 	if (tel == '') {
 		return '手机号不能为空'
 	}

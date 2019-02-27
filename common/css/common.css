@@ -13,6 +13,22 @@
     top: 28px;
     left: 79px;
     color: #fc0000;
+    visibility: hidden;
+}
+
+.kv-item .abso-city {
+    position: absolute;
+    top: 0;
+    left: 351px;
+    background: #fff;
+    z-index: 100;
+}
+.kv-item .abso-city .city-close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 button{outline: none;!important;}

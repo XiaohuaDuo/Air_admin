@@ -6,7 +6,7 @@ function $(str) {
 var addrShow02 = $('addr-show02');  //最终地址显示框
 var titleWrap = $('title-wrap').getElementsByTagName('LI');
 var addrWrap = $('addr-wrap');   //省市区显示模块
-var btn2 = document.getElementsByClassName('met2')[0];  //确定按钮
+// var btn2 = document.getElementsByClassName('met2')[0];  //确定按钮
 
 var current2 = {
     prov: '',
@@ -23,7 +23,7 @@ window.onload = showProv2();
 function showProv2() {
     addrWrap.innerHTML = '';
     /*addrShow02.value = '';*/
-    btn2.disabled = true;
+    // btn2.disabled = true;
     titleWrap[0].className = 'titleSel';
     var len = provice.length;
     for (var i = 0; i < len; i++) {
@@ -99,17 +99,21 @@ function showCountry2(index) {
 
 /*选中具体的县区*/
 function selectCountry(index) {
-    btn2.disabled = false;
+    // btn2.disabled = false;
     current2.country = index;
     addrWrap.getElementsByTagName('li')[index].style.backgroundColor = '#23B7E5';
     current2.countryVal = provice[current2.prov].city[current2.city].districtAndCounty[index];
+    console.log('选择区')
+    chooseRecept()
+    // addrShow02.value = current2.provVal + ' ' + current2.cityVal + ' ' + current2.countryVal;
+    // addrWrap.getElementsByTagName('li')[current2.country].style.backgroundColor = '';
 }
 
 /*点击确定后恢复成初始状态，且将所选地点显示在输入框中*/
-btn2.onclick = function () {
-    addrShow02.value = current2.provVal + ' ' + current2.cityVal + ' ' + current2.countryVal;
-    addrWrap.getElementsByTagName('li')[current2.country].style.backgroundColor = '';
-};
+// btn2.onclick = function () {
+//     addrShow02.value = current2.provVal + ' ' + current2.cityVal + ' ' + current2.countryVal;
+//     addrWrap.getElementsByTagName('li')[current2.country].style.backgroundColor = '';
+// };
 
 /*分别点击省市区标题的处理函数*/
 document.getElementById('title-wrap').onclick = function (e) {
